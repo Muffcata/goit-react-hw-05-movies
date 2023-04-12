@@ -15,7 +15,7 @@ export const Home = () => {
         console.log('error');
       }
     };
-    console.log(getMovies);
+
     loadMovies();
   }, []);
 
