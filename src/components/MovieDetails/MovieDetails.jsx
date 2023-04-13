@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const MovieDetails = ({ movie }) => {
   const { title, overview, vote_average, genres, poster_path, original_title } =
     movie;
-  const poster = poster_path;
+  const poster = `https://image.tmdb.org/t/p/w500${poster_path}`;
   const userScore = `User Score: ${vote_average * 10}%`;
   const genresList = `${genres?.map(({ name }) => name + '')}`;
 

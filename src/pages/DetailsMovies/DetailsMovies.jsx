@@ -13,7 +13,6 @@ export const DetailsMovies = () => {
       try {
         const fetchedMovies = await getMovieById.fetchMovieById(id);
         setDetails(fetchedMovies);
-        console.log(detailsMovie);
       } catch (error) {
         console.log(error);
       }
