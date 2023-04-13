@@ -4,7 +4,6 @@ import { getTrendingMovie } from 'components/services/fetchAPI';
 
 export const Home = () => {
   const [nameMovies, setNameMovies] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const loadMovies = async () => {
@@ -21,6 +20,7 @@ export const Home = () => {
 
   return (
     <>
+      <h1>Trending Movies</h1>
       <div>
         <MoviesList data={nameMovies} />
       </div>

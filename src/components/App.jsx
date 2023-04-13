@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
-import { Navigation } from './Navigation/Navigation';
+
 // import { Cast } from './Cast/Cast';
 import { Home } from 'pages/Home/Home';
 // import { MovieDetails } from 'components/MovieDetails/MovieDetails';
