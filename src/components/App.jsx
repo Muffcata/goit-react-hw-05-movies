@@ -4,8 +4,8 @@ import React from 'react';
 import { Cast } from 'pages/Cast/Cast';
 import { Home } from 'pages/Home/Home';
 import { Navigation } from './Navigation/Navigation';
-import DetailsMovies from 'pages/DetailsMovies/DetailsMovies';
-// import { Movies } from 'components/Movies/Movies';
+import { DetailsMovies } from 'pages/DetailsMovies/DetailsMovies';
+import { Movies } from 'pages/Movies/Movies';
 import { Reviews } from 'pages/Reviews/Reviews';
 
 export const App = () => {
@@ -14,7 +14,7 @@ export const App = () => {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/movies" element={<Movies />} /> */}
+        <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:movieId" element={<DetailsMovies />} />
         <Route path="/movies/:movieId/cast" element={<Cast />} />
         <Route path="/movies/:movieId/reviews" element={<Reviews />} />

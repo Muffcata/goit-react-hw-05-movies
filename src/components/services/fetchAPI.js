@@ -43,7 +43,17 @@ const fetchReviewsMovie = async id => {
   return response.data;
 };
 
+const fetchSearchMovies = async query => {
+  const response = await axios.get(`/search/movie?query=${query}`, {
+    params: {
+      api_key: API_KEY,
+    },
+  });
+  return response.data.results;
+};
+
 export const getReviewsMovie = { fetchReviewsMovie };
 export const getTrendingMovie = { fetchMoviesTrending };
 export const getMovieById = { fetchMovieById };
 export const getCastMovie = { fetchCastMovie };
+export const getSearchMovie = { fetchSearchMovies };
