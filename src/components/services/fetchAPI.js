@@ -40,7 +40,7 @@ const fetchReviewsMovie = async id => {
     },
   });
 
-  return response.data.response;
+  return response.data;
 };
 
 export const getReviewsMovie = { fetchReviewsMovie };
