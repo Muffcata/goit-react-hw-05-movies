@@ -13,7 +13,7 @@ export const MovieDetails = ({ movie }) => {
     original_title,
   } = movie;
 
-  const userScore = `User Score: ${vote_average * 10}%`;
+  const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
   const genresList = `${genres?.map(({ name }) => name)}`;
 
   return (

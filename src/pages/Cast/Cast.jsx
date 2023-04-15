@@ -27,7 +27,7 @@ export const Cast = () => {
   return (
     <>
       {isLoading && <Spinner />}
-      <h1>Cast</h1>
+      <h4 className={style.title}>Cast:</h4>
       <ul className={style.list}>
         {cast.map(({ character, id, profile_path, name }) => (
           <li className={style.item} key={id}>

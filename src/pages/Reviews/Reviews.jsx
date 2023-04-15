@@ -30,12 +30,16 @@ export const Reviews = () => {
     <div>
       {isLoading && <Spinner />}
       <ul className={style.list}>
-        {reviews.map(({ id, author, content }) => (
-          <li className={style.item} key={id}>
-            <h3>Author: {author}</h3>
-            <p>{content}</p>
-          </li>
-        ))}
+        {reviews && reviews.length ? (
+          reviews.map(({ id, author, content }) => (
+            <li className={style.item} key={id}>
+              <h3>Author: {author}</h3>
+              <p>{content}</p>
+            </li>
+          ))
+        ) : (
+          <p>We don't have any reviews for this movie.</p>
+        )}
       </ul>
     </div>
   );
