@@ -11,11 +11,13 @@ export const Navigation = () => {
           <Link className={style.list} to="/">
             Home
           </Link>
-          <Link to="/movies">Movies</Link>
+          <Link className={style.list} to="/movies">
+            Movies
+          </Link>
         </ul>
       </nav>
 
-      <button type="button" onClick={() => navigate(-1)}>
+      <button className={style.btn} type="button" onClick={() => navigate(-1)}>
         Go back
       </button>
     </>
