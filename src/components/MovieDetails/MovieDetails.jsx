@@ -14,7 +14,7 @@ export const MovieDetails = ({ movie }) => {
   } = movie;
 
   const userScore = `User Score: ${vote_average * 10}%`;
-  const genresList = `${genres?.map(({ name }) => name + '')}`;
+  const genresList = `${genres?.map(({ name }) => name)}`;
 
   return (
     <section className={style.container}>
