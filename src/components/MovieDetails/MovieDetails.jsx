@@ -43,8 +43,12 @@ export const MovieDetails = ({ movie }) => {
           </div>
           <div className={style.addBox}>
             <h3 className={style.header}>Additional information</h3>
-            <Link to={`/movies/${id}/cast`}>Cast</Link>
-            <Link to="reviews">Reviews</Link>
+            <Link className={style.link} to={`/movies/${id}/cast`}>
+              Cast
+            </Link>
+            <Link className={style.link} to="reviews">
+              Reviews
+            </Link>
           </div>
         </div>
       </div>

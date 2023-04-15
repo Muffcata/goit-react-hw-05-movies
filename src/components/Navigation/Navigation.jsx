@@ -16,10 +16,15 @@ export const Navigation = () => {
           </Link>
         </ul>
       </nav>
-
-      <button className={style.btn} type="button" onClick={() => navigate(-1)}>
-        Go back
-      </button>
+      <div className={style.bg}>
+        <button
+          className={style.btn}
+          type="button"
+          onClick={() => navigate(-1)}
+        >
+          Go back
+        </button>
+      </div>
     </>
   );
 };

@@ -54,7 +54,12 @@
   font-weight: 200;
   font-size: 20px;
 }
-/* .addBox {
-  display: flex;
-  flex-direction: column;
-} */
+.link {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  justify-content: center;
+  color: #481030;
+  text-decoration: underline;
+  display: block;
+}
