@@ -1,6 +1,7 @@
 import { getReviewsMovie } from 'components/services/fetchAPI';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import style from 'pages/Reviews/Reviews.module.css';
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -23,9 +24,9 @@ export const Reviews = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={style.list}>
         {reviews.map(({ id, author, content }) => (
-          <li key={id}>
+          <li className={style.item} key={id}>
             <h3>Author: {author}</h3>
             <p>{content}</p>
           </li>
