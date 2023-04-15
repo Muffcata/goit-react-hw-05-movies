@@ -1,0 +1,60 @@
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 20px;
+}
+.card {
+  display: flex;
+}
+.img {
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  align-self: flex-start;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 45px;
+  font-weight: 700;
+  color: #661141;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 0 10px 0 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+.score {
+  font-size: 200;
+  font-weight: 500;
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  font-size: 20px;
+}
+.header {
+  font-size: 25px;
+  font-weight: 400;
+  color: #b21c71;
+  padding: 18px 10px 0 10px;
+}
+.genres {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 0 10px 0 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
+/* .addBox {
+  display: flex;
+  flex-direction: column;
+} */

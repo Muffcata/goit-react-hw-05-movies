@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import style from 'components/MovieDetails/MovieDetails.module.css';
 
 export const MovieDetails = ({ movie }) => {
   const {
@@ -11,31 +12,43 @@ export const MovieDetails = ({ movie }) => {
     poster_path,
     original_title,
   } = movie;
-  const poster = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
   const userScore = `User Score: ${vote_average * 10}%`;
   const genresList = `${genres?.map(({ name }) => name + '')}`;
 
   return (
-    <>
-      <div>
-        <img src={poster} alt={original_title} />
+    <section className={style.container}>
+      <div className={style.card}>
+        <div className={style.wrapper}>
+          <img
+            className={style.img}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w500${poster_path}`
+                : `https://bitsofco.de/content/images/2018/12/broken-1.png`
+            }
+            alt={original_title}
+          />
+        </div>
+        <div>
+          <h1 className={style.title}>{title}</h1>
+          <p className={style.score}>{userScore}</p>
+          <div>
+            <h2 className={style.header}>Overview</h2>
+            <p className={style.description}>{overview}</p>
+          </div>
+          <div>
+            <h3 className={style.header}>Genres</h3>
+            <p className={style.genres}>{genresList}</p>
+          </div>
+          <div className={style.addBox}>
+            <h3 className={style.header}>Additional information</h3>
+            <Link to={`/movies/${id}/cast`}>Cast</Link>
+            <Link to="reviews">Reviews</Link>
+          </div>
+        </div>
       </div>
-      <h1>{title}</h1>
-      <p>{userScore}</p>
-      <div>
-        <h2>Overview</h2>
-        <p>{overview}</p>
-      </div>
-      <div>
-        <h3>Genres</h3>
-        <p>{genresList}</p>
-      </div>
-      <div>
-        <h3>Additional information</h3>
-        <Link to={`/movies/${id}/cast`}>Cast</Link>
-        <Link to="reviews">Reviews</Link>
-      </div>
-    </>
+    </section>
   );
 };
 
