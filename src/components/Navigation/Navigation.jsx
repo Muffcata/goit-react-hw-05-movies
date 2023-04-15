@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import style from './Navigation.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export const Navigation = () => {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       <nav className={style.nav}>
@@ -14,9 +15,9 @@ export const Navigation = () => {
         </ul>
       </nav>
 
-      {/* <button type="button" onClick={() => navigate(-1)}>
+      <button type="button" onClick={() => navigate(-1)}>
         Go back
-      </button> */}
+      </button>
     </>
   );
 };
