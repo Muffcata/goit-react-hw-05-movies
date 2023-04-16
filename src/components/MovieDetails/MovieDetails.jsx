@@ -8,7 +8,7 @@ export const MovieDetails = ({ movie }) => {
     movie;
   const navigate = useNavigate();
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
-  const genresList = `${genres?.map(({ name }) => name)}`;
+  const genresList = `${genres?.map(genre => genre.name).join(', ')}`;
 
   return (
     <>
