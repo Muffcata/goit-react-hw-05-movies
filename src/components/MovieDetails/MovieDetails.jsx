@@ -1,18 +1,11 @@
 import React from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import style from 'components/MovieDetails/MovieDetails.module.css';
 import DefaultPoster from 'images/default-movie-1-1-768x1129.jpg';
 
 export const MovieDetails = ({ movie }) => {
-  const {
-    title,
-    id,
-    overview,
-    vote_average,
-    genres,
-    poster_path,
-    original_title,
-  } = movie;
+  const { title, overview, vote_average, genres, poster_path, original_title } =
+    movie;
 
   const navigate = useNavigate();
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
@@ -55,13 +48,12 @@ export const MovieDetails = ({ movie }) => {
             </div>
             <div className={style.addBox}>
               <h3 className={style.header}>Additional information</h3>
-              <Link className={style.link} to={`/movies/${id}/cast`}>
+              <Link className={style.link} to="cast">
                 Cast
               </Link>
-              <Link className={style.link} to={`/movies/${id}/reviews`}>
+              <Link className={style.link} to="reviews">
                 Reviews
               </Link>
-              <Outlet />
             </div>
           </div>
         </div>
