@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import style from 'pages/Cast/Cast.module.css';
 import { Spinner } from 'components/Spinner/Spinner';
 import DefaultAvatar from 'images/generic-profile-avatar_352864.jpg';
+import PropTypes from 'prop-types';
 
 export const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -51,3 +52,13 @@ export const Cast = () => {
 };
 
 export default Cast;
+
+Cast.propTypes = {
+  cast: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      src: PropTypes.string,
+      alt: PropTypes.string,
+    })
+  ),
+};

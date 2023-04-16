@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import style from 'pages/Reviews/Reviews.module.css';
 import { Spinner } from 'components/Spinner/Spinner';
+import PropTypes from 'prop-types';
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -46,3 +47,13 @@ export const Reviews = () => {
 };
 
 export default Reviews;
+
+Reviews.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      author: PropTypes.string,
+      content: PropTypes.string,
+    })
+  ),
+};

@@ -1,5 +1,6 @@
 import React from 'react';
 import style from 'components/SearchBox/SearchBox.module.css';
+import PropTypes from 'prop-types';
 
 export const SearchBox = ({ onSubmit }) => {
   return (
@@ -16,3 +17,7 @@ export const SearchBox = ({ onSubmit }) => {
 };
 
 export default SearchBox;
+
+SearchBox.propTypes = {
+  onSubmit: PropTypes.func,
+};

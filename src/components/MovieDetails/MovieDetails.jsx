@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import style from 'components/MovieDetails/MovieDetails.module.css';
 import DefaultPoster from 'images/default-movie-1-1-768x1129.jpg';
+import PropTypes from 'prop-types';
 
 export const MovieDetails = ({ movie }) => {
   const { title, overview, vote_average, genres, poster_path, original_title } =
@@ -63,3 +64,12 @@ export const MovieDetails = ({ movie }) => {
 };
 
 export default MovieDetails;
+
+MovieDetails.propTypes = {
+  title: PropTypes.string,
+  overview: PropTypes.string,
+  vote_average: PropTypes.number,
+  genres: PropTypes.array,
+  poster_path: PropTypes.string,
+  original_title: PropTypes.string,
+};
