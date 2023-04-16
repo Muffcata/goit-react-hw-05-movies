@@ -4,8 +4,16 @@ import style from 'components/MovieDetails/MovieDetails.module.css';
 import DefaultPoster from 'images/default-movie-1-1-768x1129.jpg';
 
 export const MovieDetails = ({ movie }) => {
-  const { title, overview, vote_average, genres, poster_path, original_title } =
-    movie;
+  const {
+    title,
+    id,
+    overview,
+    vote_average,
+    genres,
+    poster_path,
+    original_title,
+  } = movie;
+
   const navigate = useNavigate();
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
   const genresList = `${genres?.map(genre => genre.name).join(', ')}`;
@@ -47,10 +55,10 @@ export const MovieDetails = ({ movie }) => {
             </div>
             <div className={style.addBox}>
               <h3 className={style.header}>Additional information</h3>
-              <Link className={style.link} to="cast">
+              <Link className={style.link} to={`/movies/${id}/cast`}>
                 Cast
               </Link>
-              <Link className={style.link} to="reviews">
+              <Link className={style.link} to={`/movies/${id}/reviews`}>
                 Reviews
               </Link>
               <Outlet />
