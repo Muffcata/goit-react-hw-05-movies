@@ -34,7 +34,7 @@ export const MovieDetails = ({ movie }) => {
               alt={original_title}
             />
           </div>
-          <div>
+          <div className={style.box}>
             <h1 className={style.title}>{title}</h1>
             <p className={style.score}>{userScore}</p>
             <div>
