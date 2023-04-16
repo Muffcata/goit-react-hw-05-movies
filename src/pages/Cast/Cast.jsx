@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import style from 'pages/Cast/Cast.module.css';
 import { Spinner } from 'components/Spinner/Spinner';
+import DefaultAvatar from 'images/generic-profile-avatar_352864.jpg';
 
 export const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -32,7 +33,12 @@ export const Cast = () => {
         {cast.map(({ character, id, profile_path, name }) => (
           <li className={style.item} key={id}>
             <img
-              src={`https://image.tmdb.org/t/p/w200${profile_path}`}
+              className={style.img}
+              src={
+                profile_path
+                  ? `https://image.tmdb.org/t/p/w200${profile_path}`
+                  : DefaultAvatar
+              }
               alt={name}
             />
             <p className={style.name}>{name}</p>

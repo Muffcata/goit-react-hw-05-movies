@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from 'components/MovieDetails/MovieDetails.module.css';
+import DefaultPoster from 'images/default-movie-1-1-768x1129.jpg';
 
 export const MovieDetails = ({ movie }) => {
   const {
@@ -25,7 +26,7 @@ export const MovieDetails = ({ movie }) => {
             src={
               poster_path
                 ? `https://image.tmdb.org/t/p/w500${poster_path}`
-                : `https://bitsofco.de/content/images/2018/12/broken-1.png`
+                : DefaultPoster
             }
             alt={original_title}
           />
