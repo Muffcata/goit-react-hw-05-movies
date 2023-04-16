@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getMovieById } from 'components/services/fetchAPI';
-import { useParams } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { MovieDetails } from 'components/MovieDetails/MovieDetails';
 import { Spinner } from 'components/Spinner/Spinner';
 
@@ -28,6 +28,7 @@ export const DetailsMovies = () => {
     <div>
       {isLoading && <Spinner />}
       <MovieDetails movie={details} />
+      <Outlet />
     </div>
   );
 };
