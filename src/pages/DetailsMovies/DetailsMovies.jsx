@@ -27,6 +27,7 @@ export const DetailsMovies = () => {
   return (
     <div>
       {isLoading && <Spinner />}
+
       <MovieDetails movie={details} />
       <Outlet />
     </div>

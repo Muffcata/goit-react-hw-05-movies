@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import style from 'components/MovieDetails/MovieDetails.module.css';
 import DefaultPoster from 'images/default-movie-1-1-768x1129.jpg';
 import PropTypes from 'prop-types';
@@ -8,21 +8,17 @@ export const MovieDetails = ({ movie }) => {
   const { title, overview, vote_average, genres, poster_path, original_title } =
     movie;
 
-  const navigate = useNavigate();
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
   const genresList = `${genres?.map(genre => genre.name).join(', ')}`;
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/';
 
   return (
     <>
-      <div className={style.bg}>
-        <button
-          className={style.btn}
-          type="button"
-          onClick={() => navigate(-1)}
-        >
-          Go back
-        </button>
-      </div>
+      <Link to={backLinkHref} className={style.btn}>
+        Go back
+      </Link>
+
       <section className={style.container}>
         <div className={style.card}>
           <div className={style.wrapper}>
