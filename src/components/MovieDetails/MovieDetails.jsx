@@ -5,8 +5,15 @@ import DefaultPoster from 'images/default-movie-1-1-768x1129.jpg';
 import PropTypes from 'prop-types';
 
 export const MovieDetails = ({ movie }) => {
-  const { title, overview, vote_average, genres, poster_path, original_title } =
-    movie;
+  const {
+    title,
+    id,
+    overview,
+    vote_average,
+    genres,
+    poster_path,
+    original_title,
+  } = movie;
 
   const userScore = `User Score: ${(vote_average * 10).toFixed(0)}%`;
   const genresList = `${genres?.map(genre => genre.name).join(', ')}`;
@@ -45,10 +52,18 @@ export const MovieDetails = ({ movie }) => {
             </div>
             <div className={style.addBox}>
               <h3 className={style.header}>Additional information</h3>
-              <Link className={style.link} to="cast">
+              <Link
+                className={style.link}
+                to={`/movies/${id}/cast`}
+                state={{ from: location }}
+              >
                 Cast
               </Link>
-              <Link className={style.link} to="reviews">
+              <Link
+                className={style.link}
+                to={`/movies/${id}/reviews`}
+                state={{ from: location }}
+              >
                 Reviews
               </Link>
             </div>

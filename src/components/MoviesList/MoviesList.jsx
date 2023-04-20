@@ -4,6 +4,7 @@ import style from 'components/MoviesList/MoviesList.module.css';
 
 export const MoviesList = ({ data }) => {
   const location = useLocation();
+
   return (
     <ul>
       {data.map(movie => (
