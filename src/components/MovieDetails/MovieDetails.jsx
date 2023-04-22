@@ -55,14 +55,14 @@ export const MovieDetails = ({ movie }) => {
               <Link
                 className={style.link}
                 to={`/movies/${id}/cast`}
-                state={{ from: location }}
+                state={{ from: location.from }}
               >
                 Cast
               </Link>
               <Link
                 className={style.link}
                 to={`/movies/${id}/reviews`}
-                state={{ from: location }}
+                state={{ from: location.from }}
               >
                 Reviews
               </Link>
